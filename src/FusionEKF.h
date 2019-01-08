@@ -25,6 +25,11 @@ class FusionEKF {
    * Run the whole flow of the Kalman Filter from here.
    */
   void ProcessMeasurement(const MeasurementPackage &measurement_pack);
+  
+  /**
+   * Convert radar from polar to cartesian coordinates 
+   */
+  Eigen::VectorXd ConvertFromPolarToCartesian(float rho, float phi, float rho_dot);
 
   /**
    * Kalman Filter update and prediction math lives in here.
